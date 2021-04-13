@@ -26,10 +26,10 @@ header{
 
 select{
 	width: min(90%, 100px);
-	margin: 1rem;
-	padding: .1rem .3rem;
+	margin: .9rem;
+	padding: .1rem .2rem;
 	margin-left: 0;
-	font-size: 1.1rem;
+	font-size: 1rem;
 	font-weight: 600;
 
 	outline-style: none;
@@ -80,25 +80,50 @@ select:hover, button:hover{
 	border-radius: 5px;
 	height: 150px;
 	width: 150px;
+	position: relative;
+	transition: transform 0.5s;
+	transform-style: preserve-3d;
+}
 
+.back, .front {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	cursor: default;
+}
+
+.back{
+	text-align: center;
+	font-size: 9rem;
+	font-weight: bold;
+	font-family: sans-serif;
+	color: #999;
+	background-color: #eee;
+}
+
+.front{
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: rotateY(180deg);
 }
 
 .card-selected {
-	background: #999;
-	border: 2px solid #372
+	border: 2px solid #57b93f;
+	transform:rotateY(180deg);
 }
 
+.card-disable .back,
 .card-disable{
-	color: #333;
-	border: 2px solid #999;
+	color: #CCC;
+	border: 1px solid #999;
 }
 
 
 
 @media screen and (max-width: 499px) {
-  body {
-    background-color: lightgreen;
-  }
 
   header{
 	flex-direction: column;
