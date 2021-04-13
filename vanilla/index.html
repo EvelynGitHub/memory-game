@@ -1,17 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br"n>
+<html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="shortcut icon" href="#" />
 		<link rel="stylesheet" href="./css/main.css">
+		
 		<script src="./js/main.js" defer></script>
 
 		<title>Bem-vindo ao Jogo</title>
 	</head>
 	<body>
-		<h1>Bem-vindo ao Jogo</h1>
+		<header>
+			<div class="title">
+				<h1>Bem-vindo ao Jogo:</h1>
+				<h2>Memory-game</h2>
+			</div>
+			<div class="start">
+				<label for="numberCards">Selecione o número de cards</label>
+				<select name="numberCards" id="numberCards">
+                <option value="2">4</option>
+                <option value="3">6</option>
+                <option value="4">8</option>
+                <option value="5">10</option>
+				</select>
+            	<button>Iniciar o Jogo</button>
+			</div>
+		</header>
 		<div class="game">
 			<div class="card" name="1-myId" onclick="clickCard(this)" id="1">
 				<div class="back">Sabe quem sou?</div>
@@ -28,8 +44,8 @@
 			<div class="card" name="3-myId" onclick="clickCard(this)" id="4">
 				<div class="back">Sabe quem sou?</div>
 				<div class="front">IMAGEM 3</div>
-		   	<div> 
+				<div> 
 
-		</div>
+				</div>
 	</body>
 </html>

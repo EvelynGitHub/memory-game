@@ -4,8 +4,30 @@
 	box-sizing: border-box;
 }
 
-h1{
-	color:red;
+body{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #EEE;
+}
+
+header{
+	width: 100%;
+	background: #222;
+	color: #FFF;
+	padding: 1rem;
+	margin-bottom: 2rem;
+
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+
+.title{
+	font-family: Arial, Helvetica, sans-serif;
+	height: 100%;
 }
 
 .game{
@@ -27,3 +49,9 @@ h1{
 	background: #999;
 	border: 2px solid #372
 }
+
+.card-disable{
+	color: #333;
+	border: 2px solid #999;
+}
+

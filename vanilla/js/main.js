@@ -24,7 +24,9 @@ function clickCard(element){
 			// Cartas iguais, ganha ponto, add css, desabilita
 			let disableCards = document.querySelectorAll("[name='"+card+"']")
 			disableCards[0].onclick = null
+			disableCards[0].classList.add("card-disable")
 			disableCards[1].onclick = null
+			disableCards[1].classList.add("card-disable")
 			clearClass(id, divId)
 		}else{
 			console.log("Vira o card para baixo")
