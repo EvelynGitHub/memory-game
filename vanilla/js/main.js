@@ -136,7 +136,7 @@ function equalsCards(card){
 		alert("Parabens, você venceu com "+points+" pontos!")
 		points = 0;    
 		document.getElementById("points").innerHTML = "Pontos: "+points;
-	}, 1000)
+	}, 1505)
 }
 
 function clearClass(divNow, divBefore){
