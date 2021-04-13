@@ -4,6 +4,20 @@ let cardId = 0
 let divId = ""
 let cont = 0
 
+let amountCard = document.getElementById("numberCards")
+let btnStart = document.getElementById("btnStart")
+
+
+
+btnStart.addEventListener("click", function(){
+	console.log("Que o jogo começe");
+	console.log("Qtd.: ", amountCard.value);
+	// Buscar as imagens
+	// http://shibe.online/api/shibes?count=1
+	// Gerar Cards
+	// Adicionar Cards na div.game
+})
+
 console.clear()
 function clickCard(element){
  	cont++
