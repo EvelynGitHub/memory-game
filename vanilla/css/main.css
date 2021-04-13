@@ -17,7 +17,7 @@ header{
 	background: #222;
 	color: #FFF;
 	padding: 1rem;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 
 	display: flex;
 	justify-content: space-evenly;
@@ -73,6 +73,7 @@ select:hover, button:hover{
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 1rem;
+	margin-top: 1rem;
 
 }
 

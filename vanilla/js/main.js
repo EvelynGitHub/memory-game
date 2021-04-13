@@ -3,6 +3,7 @@ console.log("INICIO do Jogo")
 let cardId = 0
 let divId = ""
 let cont = 0
+let points = 0;
 
 let amountCard = document.getElementById("numberCards")
 let btnStart = document.getElementById("btnStart")
@@ -11,6 +12,7 @@ let game = document.getElementById("game")
 
 btnStart.addEventListener("click", function(){
 	btnStart.hidden = true ;
+	amountCard.hidden = true ;
 	console.log("Que o jogo começe");
 	console.log("Qtd.: ", amountCard.value);
 	// Buscar as imagens
@@ -34,7 +36,7 @@ btnStart.addEventListener("click", function(){
 	ajax(obj);
 	// http://shibe.online/api/shibes?count=1
 	// Gerar Cards
-   
+
 	// Adicionar Cards na div.game
 })
 
@@ -42,30 +44,30 @@ btnStart.addEventListener("click", function(){
 function createCard (id, name ,urlImg) {
 	const html = `
 		${game.innerHTML}
-   		 <div class="card" name="nameCard-${name}" onclick="clickCard(this)" id="${id}">
-   			<div class="back">?</div>
-   			<div class="front"><img src="${urlImg}"></div>
-   		</div>`
+		 <div class="card" name="nameCard-${name}" onclick="clickCard(this)" id="${id}">
+			<div class="back">?</div>
+			<div class="front"><img src="${urlImg}"></div>
+		</div>`
 
 	game.innerHTML = html;
 }
 
 function shuffle(array) {
-  let currentIndex = array.length, temporaryValue, randomIndex;
+	let currentIndex = array.length, temporaryValue, randomIndex;
 
-  while (0 !== currentIndex) {
+	while (0 !== currentIndex) {
 
-    // Index randomico de 0 a tamanho da array
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
+		// Index randomico de 0 a tamanho da array
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
 
-    // Uso copo para trocar as posições
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
+		// Uso copo para trocar as posições
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
 
-  return array;
+	return array;
 }
 
 
@@ -98,13 +100,8 @@ function clickCard(element){
 		if (card == cardOne) {
 			console.log("Cartas Iguais")
 			// Cartas iguais, ganha ponto, add css, desabilita
-			let disableCards = document.querySelectorAll("[name='"+card+"']")
-			disableCards[0].onclick = null
-			disableCards[0].classList.add("card-disable")
-			disableCards[1].onclick = null
-			disableCards[1].classList.add("card-disable")
-
 			clearClass(id, divId)
+			equalsCards(card)
 		} else {
 			console.log("Vira o card para baixo")
 			clearClass(id, divId)
@@ -112,6 +109,34 @@ function clickCard(element){
 
 	}
 
+}
+
+function equalsCards(card){
+	let disableCards = document.querySelectorAll("[name='"+card+"']")
+
+	disableCards[0].onclick = null
+	disableCards[0].classList.add("card-disable")
+	disableCards[1].onclick = null
+	disableCards[1].classList.add("card-disable")
+
+	points++;
+
+	if(points != amountCard.value){
+		document.getElementById("points").innerHTML = "Pontos: "+points;
+		return
+	}
+
+	setTimeout(() => {
+		game.innerHTML = '';
+		btnStart.hidden = false
+		amountCard.hidden = false
+		cardId = 0
+		divId = ""
+		cont = 0
+		alert("Parabens, você venceu com "+points+" pontos!")
+		points = 0;    
+		document.getElementById("points").innerHTML = "Pontos: "+points;
+	}, 1000)
 }
 
 function clearClass(divNow, divBefore){
