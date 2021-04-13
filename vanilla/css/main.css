@@ -24,10 +24,48 @@ header{
 	align-items: center;
 }
 
+select{
+	width: min(90%, 100px);
+	margin: 1rem;
+	padding: .1rem .3rem;
+	margin-left: 0;
+	font-size: 1.1rem;
+	font-weight: 600;
+
+	outline-style: none;
+	border-radius: 6px;
+	border: 1px solid #FFF;
+}
+
+button{
+	outline-style: none;
+	max-height: 2rem;
+	min-width: 9rem;
+	padding: .3rem;
+	border: 1px solid #FFF;
+	border-radius: 6px;
+	font-size: 1.1rem;
+	font-weight: 600;
+	background-color: #57b93f;
+	color: #FFF;
+}
+
+select:hover, button:hover{
+	border: 1px solid #666;
+	opacity: .8;
+	cursor: pointer;
+}
+
 
 .title{
 	font-family: Arial, Helvetica, sans-serif;
 	height: 100%;
+}
+
+.start{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 .game{
@@ -53,5 +91,18 @@ header{
 .card-disable{
 	color: #333;
 	border: 2px solid #999;
+}
+
+
+
+@media screen and (max-width: 499px) {
+  body {
+    background-color: lightgreen;
+  }
+
+  header{
+	flex-direction: column;
+	gap: 0.5rem;
+  }
 }
 
