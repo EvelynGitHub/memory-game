@@ -19,7 +19,8 @@ btnStart.addEventListener("click", function(){
 	let obj = {
 		data: amountCard.value,
 		success: function(urls){
-
+			console.log(urls)
+			
 			urls = urls.map((v, i) => {return {id: i, img: v}; })
 
 			let cardsOfGame = shuffle ([...urls, ...urls]);
@@ -30,7 +31,7 @@ btnStart.addEventListener("click", function(){
 
 		},
 		error: function(e){
-			console.log(e)
+			console.log("erros aqui: "+e)
 		}
 	}
 	ajax(obj);
@@ -56,7 +57,6 @@ function shuffle(array) {
 	let currentIndex = array.length, temporaryValue, randomIndex;
 
 	while (0 !== currentIndex) {
-
 		// Index randomico de 0 a tamanho da array
 		randomIndex = Math.floor(Math.random() * currentIndex);
 		currentIndex -= 1;
@@ -71,17 +71,43 @@ function shuffle(array) {
 }
 
 
-function ajax(param){
-	urls = [
-		"https://cdn.shibe.online/shibes/04ad3e052255ca4f5f2b5d97c27b24ebd1b9f75c.jpg",
-		"https://cdn.shibe.online/shibes/c82ab7c7b9f2b7dde90f015a3faacfe39961607c.jpg",
-		"https://cdn.shibe.online/shibes/bc1c0accd8288f6cb6dc8746213f9ab63da38461.jpg"
-	]
+let ajax = async (param) => {
 
-	param.success(urls);
+    let listUrls = []
+
+	for(let i = 0; i <= param.data.length; i++){
+		let res = await getApi();
+
+		if (existsInArray(listUrls, res.url)){
+			i--
+		} else {
+			listUrls.push(res.url)
+		}  
+
+	}
+
+	param.success(listUrls)
 
 	return;
 }
+
+let getApi = async () => {
+	const response = await fetch("https://random.dog/woof.json")
+   
+	const data = response.json()
+
+	return data;
+}
+
+function existsInArray(array , value){
+
+	if(array.indexOf(value) != -1){
+		return true
+	}
+	return false
+
+}
+
 
 function clickCard(element){
 	cont++
