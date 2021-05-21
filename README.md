@@ -1,37 +1,71 @@
-## Welcome to GitHub Pages
+# Memory-game
 
-You can use the [editor on GitHub](https://github.com/EvelynGitHub/memory-game/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+<center>
+  
+![Imagem de capa](https://github.com/EvelynGitHub/assets-readme/blob/main/img/capa.png)
+  
+</center>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<center>
+  
+![GitHub](https://img.shields.io/github/license/EvelynGitHub/memory-game)
+  
+</center>
 
-### Markdown
+# Sobre o Projeto:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+[Demo do Projeto](https://evelyngithub.github.io/memory-game/vanilla/)
 
-```markdown
-Syntax highlighted code block
+Este projeto consiste em um simples jogo da memória. O objetivo principal é praticar a utilização de uma API de imagens, como objetivo secundario este repositório pretende construir o mesmo jogo várias vezes, porém utilizando tecnologias diferente. 
 
-# Header 1
-## Header 2
-### Header 3
+Nesta primeira versão, foi usado apenas CSS, HTML e JS puro.
 
-- Bulleted
-- List
+O objetivo do jogo é encontrar todos os pares das imagens apresentadas.
 
-1. Numbered
-2. List
+## Layout
 
-**Bold** and _Italic_ and `Code` text
+<!-- Para deixar as imagens uma embaixo da outra, devesse colocar os links um embaixo outro com  duas quebras de linha -->
 
-[Link](url) and ![Image](src)
+<!-- ![Web 1](https://github.com/seu_user/pasta/mobile1.png)
+
+![Web 2](https://github.com/seu_user/pasta/mobile2.png) -->
+
+
+# Tecnologias utilizadas:
+
+## Front end
+
+- HTML 
+- CSS 
+- JS 
+
+
+## Implantação em produção
+
+- GitHubPages
+
+# Por onde começar:
+
+## Front end web
+
+Pré-requisitos: git
+
+```bash
+# clonar repositório
+git clone https://github.com/EvelynGitHub/memory-game.git
+
+# entrar na pasta do projeto 
+cd memory-game/
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+# Como começar a usar:
 
-### Jekyll Themes
+Agora basta entrar dentro da pasta e dar dois cliques em cima do <code>index.html</code>. Bom Jogo!
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/EvelynGitHub/memory-game/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+# Autor(es)
 
-### Support or Contact
+**Evelyn Francisco Brandão**
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+https://www.linkedin.com/in/evelyn-brandão
+
+https://github.com/EvelynGitHub/
