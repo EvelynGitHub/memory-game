@@ -17,7 +17,7 @@ btnStart.addEventListener("click", function(){
 	console.log("Qtd.: ", amountCard.value);
 	// Buscar as imagens
 	let obj = {
-		data: amountCard.value,
+		data: parseInt(amountCard.value),
 		success: function(urls){
 			console.log(urls)
 			
@@ -75,7 +75,10 @@ let ajax = async (param) => {
 
     let listUrls = []
 
-	for(let i = 0; i <= param.data.length; i++){
+	console.log(param)
+	console.log(param.data)
+
+	for(let i = 0; i < param.data; i++){
 		let res = await getApi();
 
 		if (existsInArray(listUrls, res.url)){
