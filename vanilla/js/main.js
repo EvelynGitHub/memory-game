@@ -81,10 +81,10 @@ let ajax = async (param) => {
 	for(let i = 0; i < param.data; i++){
 		let res = await getApi();
 
-		if (existsInArray(listUrls, res.url)){
+		if (existsInArray(listUrls, res.message)){
 			i--
 		} else {
-			listUrls.push(res.url)
+			listUrls.push(res.message)
 		}  
 
 	}
@@ -95,7 +95,7 @@ let ajax = async (param) => {
 }
 
 let getApi = async () => {
-	const response = await fetch("https://random.dog/woof.json")
+	const response = await fetch("https://dog.ceo/api/breeds/image/random")
    
 	const data = response.json()
 
